@@ -34,3 +34,11 @@ for folder in folders:
         os.rmdir(folder[0])
 
 ~~~
+
+
+
+The files on the archive PC have been sorted now. Three folders will be present:
+- The RAW folder contains all the raw data that is directly imported from the telescope.
+- The processed_data folder contains all the data that is being used for the processing needs. Here we may keep all the files that have not been succesful for the archives (files with missing filter information for instance.)
+- The final_data folder is the one that can be taken for the database being used in the archive. 
+
