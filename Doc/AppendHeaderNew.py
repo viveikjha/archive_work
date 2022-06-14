@@ -14,7 +14,7 @@ import ephem
 import subprocess
 import numpy as np
 import pandas as pd
-import easygui as eg
+#import easygui as eg
 from datetime import datetime, timedelta
 
 from astropy import wcs
@@ -25,11 +25,11 @@ from astropy.coordinates import Angle
 # ------------------------------------------------------------------------------------------------------------------- #
 # Files to be Read
 # ------------------------------------------------------------------------------------------------------------------- #
-DIR_DOC = '/home/aries/data/1.3mDFOT_data/2012_test/Doc/'
+DIR_DOC = '/home/vivek/archive_work/20120418/'
 file_telescopes = DIR_DOC+'TelescopeList.csv'
 file_instruments = DIR_DOC+'InstrumentList.csv'
 file_keywords = DIR_DOC+'MasterHeaderList.dat'
-file_template = 'TemplateFileList.dat'
+file_template = DIR_DOC+'TemplateFileList.dat'
 
 # Telescope and Instrument Details
 telescope_df = pd.read_csv(file_telescopes, sep=',', comment='#').set_index('ShortName')
