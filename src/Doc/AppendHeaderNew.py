@@ -14,22 +14,24 @@ import ephem
 import subprocess
 import numpy as np
 import pandas as pd
-#import easygui as eg
+import easygui as eg
 from datetime import datetime, timedelta
-
+from astropy import units as u
 from astropy import wcs
 from astropy.io import fits
-from astropy.coordinates import Angle
+from astropy.coordinates import Angle, SkyCoord
+import aplpy
+import shutil
 # ------------------------------------------------------------------------------------------------------------------- #
 
 # ------------------------------------------------------------------------------------------------------------------- #
 # Files to be Read
 # ------------------------------------------------------------------------------------------------------------------- #
-DIR_DOC = '/home/vivek/archive_work/20120418/'
+DIR_DOC = '/data/archived_data/processed_data/DFOT/2022B/src/Doc/'
 file_telescopes = DIR_DOC+'TelescopeList.csv'
 file_instruments = DIR_DOC+'InstrumentList.csv'
 file_keywords = DIR_DOC+'MasterHeaderList.dat'
-file_template = DIR_DOC+'TemplateFileList.dat'
+file_template = 'TemplateFileList.dat'
 
 # Telescope and Instrument Details
 telescope_df = pd.read_csv(file_telescopes, sep=',', comment='#').set_index('ShortName')
@@ -40,6 +42,8 @@ instrument_df = pd.read_csv(file_instruments, sep=',', comment='#').set_index('S
 keywords_df = pd.read_csv(file_keywords, sep='\s+', comment='#').set_index('Header')
 keywords_df = keywords_df.fillna('NULL')
 header_df = pd.read_csv(file_template, sep='\s+', comment='#', dtype='string').set_index('FileName')
+
+#header_df = pd.read_csv(file_template, sep='\s+', comment='#', dtype='string').set_index('Object') # neha
 # ------------------------------------------------------------------------------------------------------------------- #
 
 
@@ -51,7 +55,7 @@ DATE_keyword = 'DATE-OBS'
 RA_keyword = 'RA'
 DEC_keyword = 'DEC'
 UT_keyword = 'UT'
-FILTER_keyword = 'FILTER'
+FILTER_keyword = 'FILTER1'
 OBJECT_keyword = 'OBJECT'
 # ------------------------------------------------------------------------------------------------------------------- #
 
@@ -185,7 +189,20 @@ def format_dateobs(dateobs):
     Returns:
         datenew : Modified value of the DATE_keyword which accounts for time in milliseconds.
     """
-    datetime_master = datetime.strptime(dateobs, '%Y-%m-%dT%H:%M:%S.%f')
+    #datetime_master = datetime.strptime(dateobs, '%Y-%m-%dT%H:%M:%S.%f')
+    #datenew = datetime_master.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
+    ##neha
+    print("dateobs:", dateobs)
+    try:
+        datetime_master = datetime.strptime(dateobs, '%Y-%m-%d"T"%H:%M:%S.%f')
+    except:
+        try:
+            datetime_master = datetime.strptime(dateobs, '%Y-%m-%dT%H:%M:%S.%f')
+        except:
+            datetime_master = datetime.strptime(dateobs, '%Y-%m-%dT%H:%M:%S')
+    #if 12<datetime_master.hour<18: hour_new=datetime_master.hour-12  #time is wrongly written
+    #datetime_master=datetime_master.replace(hour=hour_new)
+    #print(datetime_master,hour_new,'^^^^^^^^^^^^^^^^^^^^^^^^^^^^^')
     datenew = datetime_master.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
     return datenew
 
@@ -203,6 +220,7 @@ def modify_dateobs(header, extn=0):
     datetime_master = datetime.strptime(dateobs, '%Y-%m-%dT%H:%M:%S.%f')
     datetime_new = datetime_master + extn * timedelta(seconds=header['ACT'])
     header[DATE_keyword] = datetime_new.strftime('%Y-%m-%dT%H:%M:%S.%f')[:-3]
+
     return header
 
 # ------------------------------------------------------------------------------------------------------------------- #
@@ -243,11 +261,19 @@ def append_nullheader(telescopename, filename):
     """
     with fits.open(filename, mode='update') as hdulist:
         header = hdulist[0].header
-
+        header.remove('OBJECT', ignore_missing=True, remove_all=True) #neha
+        #print(keywords_df.index)
+        #print(header.keys())
         for keyword in keywords_df.index:
             if keyword not in list(header.keys()):
+                #print(keyword, "-------------")
+                #print(keywords_df.loc[keyword, 'Value'])
+                #print(header.keys) #neha
                 header.append(card=(keyword, keywords_df.loc[keyword, 'Value']))
-
+                #print("success")
+        print("Null Headers updated")
+        #print(header)
+        #print("su 3---------")
 
 def append_templatefiledetails(filename):
     """
@@ -257,6 +283,7 @@ def append_templatefiledetails(filename):
     Returns:
         None
     """
+    print("success----2 ------------")
     if filename in header_df.index:
         with fits.open(filename, mode='update') as hdulist:
             header = hdulist[0].header
@@ -331,13 +358,19 @@ def format_header(telescopename, filename):
     header = hdulist[0].header
     header['ORIGFILE'] = filename
 
+    print('step111111111111111',telescopename)
     if telescopename == 'ST':
-        if instrument == '1k x 1k Imager':
+        #if instrument == '1k x 1k Imager':   #Neha
+        if instrument == '1K_IMG2POL':        #Neha
             date = header['DATE_OBS'].replace('/', '-')
+            print(date,'++++++++++++++++++++++++')
             time_utc = header['TIME']
             dateobs = format_dateobs(date + 'T' + time_utc)
-            header.extend(card=(DATE_keyword, dateobs), update=True)
-            header.remove('OBJECT', ignore_missing=True, remove_all=True)
+            print(dateobs,'$$$$$$$$$$$$$$$$$$$$$')
+            header[DATE_keyword] = dateobs 
+            #header.extend(cards=(DATE_keyword, dateobs), update=True)
+            #header.remove('OBJECT', ignore_missing=True, remove_all=True)
+            print('test++++++++++++++++++++++++')
 
     elif telescopename == 'DFOT':
         if 'FRAME' in header.keys():
@@ -455,12 +488,38 @@ def calculate_airmass(telescopename, filename):
     object_obs._epoch = ephem.J2000
     object_obs.compute(telescope)
 
-    object_alt = Angle(str(object_obs.alt) + ' degrees').degree
-    airmass = 1 / np.cos(np.radians(90 - object_alt))
-
-    dict_header = {'JD': str(julian_day), 'LST': str(time_sidereal), 'ALTITUDE': str(object_obs.alt),
-                   'AZIMUTH': str(object_obs.az), 'AIRMASS': str(airmass)}
-
+    lon= header['GEOLONG']
+    lat= header['GEOLAT']
+    c = SkyCoord(lon, lat, frame = 'icrs', unit = 'deg')
+    lon = c.ra.value
+    lat = c.dec.value
+    lst = str(time_sidereal)
+    LST = Angle(lst + ' hours').deg
+    # Alt & Az calculated based on equations of http://www.stargazing.net/kepler/altaz.html
+    # Also see the calculator: http://jukaukor.mbnet.fi/star_altitude.html
+    ha = LST - float(object_ra)
+    if ha < 0.0: ha = ha + 360
+    sin_dec = np.sin(np.radians(float(object_dec)))
+    sin_lat = np.sin(np.radians(lat))
+    cos_lat = np.cos(np.radians(lat))
+    cos_dec = np.cos(np.radians(float(object_dec)))
+    # Altitude:
+    alt0 = sin_dec * sin_lat + cos_dec * cos_lat * np.cos(np.radians(ha))
+    alt1 = np.arcsin(alt0)     #in radians
+    alt  = np.degrees(alt1)    #in degrees
+    sin_alt = alt0
+    cos_alt = np.cos(np.radians(alt))
+    #Azimuth:
+    az0 = np.arccos( (sin_dec - sin_alt*sin_lat) / (cos_alt*cos_lat ))
+    if np.sin(np.radians(ha))<0: az = np.degrees(az0)
+    else: az = 360 - np.degrees(az0)
+    airmass = 1 / np.cos(np.radians(90 - alt))
+    alt_angle = Angle(alt, u.deg).to_string(unit = u.degree, sep=':')
+    az_angle = Angle(az, u.deg).to_string(unit = u.degree, sep=':')
+    #dict_header = {'JD': str(julian_day), 'LST': str(time_sidereal), 'ALTITUDE': str(object_obs.alt),
+                  # 'AZIMUTH': str(object_obs.az), 'AIRMASS': str(airmass)}
+    dict_header = {'JD': str(julian_day), 'LST': str(time_sidereal), 'ALTITUDE': alt_angle,
+                   'AZIMUTH': az_angle, 'AIRMASS': str(airmass)}
     for keyword, value in dict_header.items():
         if keyword in header.keys():
             header.remove(keyword, ignore_missing=True, remove_all=True)
@@ -508,23 +567,32 @@ def do_astrometry(telescopename, filename, pixtolerance=0.02):
     Returns:
         None
     """
+    print('++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     _, _, OBS_LAT, _, _, _, _ = telescope_df.loc[telescopename].values
 
     header = fits.getheader(filename, ext=0)
     date_obs = header[DATE_keyword]
+    #print(header[OBJECT_keyword],'**************')
+    #print(header['CATEGORY'],'*****************')
+    #if header[OBJECT_keyword] in ['BIAS', 'FLAT']:
+        #header['CATEGORY'] = 'Calibration':
+    #    print('calibration file ******')
+    #    pass
 
+    #else:
+    print('doing astrometry ******')
     try:
         PIXSCALE = header['PIXSCALE']
         PIX_l = str(PIXSCALE - (PIXSCALE * pixtolerance))
         PIX_u = str(PIXSCALE + (PIXSCALE * pixtolerance))
 
         LST_deg = get_LST(telescopename, date_obs)
-
+        print(LST_deg,date_obs,'LST_deg & date_obs')
         # if telescopename == 'DFOT':
         try:
             subprocess.call('solve-field --continue --downsample 2 --no-plots --scale-low ' + PIX_l + ' --scale-high '
                             + PIX_u + ' --scale-units app --config '+DIR_DOC+'Astrometry.cfg --ra ' + str(LST_deg) + ' --dec ' +
-                            str(OBS_LAT) + ' --radius 50 ' + filename, timeout=500, shell=True)
+                            str(OBS_LAT) + ' --radius 100 ' + filename, timeout=60, shell=True)
         except subprocess.TimeoutExpired:
             display_text("Astrometry Timed Out For '{0}'".format(filename))
             return False
@@ -532,7 +600,7 @@ def do_astrometry(telescopename, filename, pixtolerance=0.02):
             display_text("Astrometry Ran Sucessfully For '{0}'".format(filename))
             os.system('rm -rf *.axy *.corr *.xyls *.match *.rdls *.solved *.wcs')
             return True
-        
+        print('Astrometry successfull---------------------------111--') 
         # elif telescopename == 'ST':
         #    os.system('solve-field --continue --downsample 2 --no-plots --scale-low ' + PIXSCALE_l + ' --scale-high '
         #              + PIXSCALE_u + ' --scale-units app --config Astrometry.cfg  ' + filename)
@@ -541,6 +609,7 @@ def do_astrometry(telescopename, filename, pixtolerance=0.02):
     except KeyError:
         display_text("ERROR: Header Keyword 'PIXSCALE' not found")
         return False
+    print('Astrometry successfull-----------------------------')
 
 
 def pmitofits(list_files, list_pmi='ListPMI'):
@@ -558,6 +627,77 @@ def pmitofits(list_files, list_pmi='ListPMI'):
 # Functions to Execute Code
 # ------------------------------------------------------------------------------------------------------------------- #
 
+
+
+# def check_astrometry(filename):
+
+#     """ 
+#     Checks whether astrometry is done on the files or not. If astrometry failed on a
+#     source, it moves the file to the failed_astrometry/ directory.
+#     """
+#     if ('fits' in filename):
+#             data=fits.open(filename)
+#             header=data[0].header
+#             try:
+#                 ra,dec=header['RA'],header['DEC']
+#                 filters=header['FILTER1']
+#                 category=header['CATEGORY']
+#                 if (category=='Science'):
+#                     if (ra=='NULL'):
+#                         print(filename,ra,dec,filters,'\t','astrometry failed')
+#                         #shutil.move(filename,'failed_astrometry/')
+#                     else:
+#                         print(filename,ra,dec,filters, '\t','astrometry successful')
+           
+#             except KeyError:
+#                 print(filename,filters,'\t','astrometry failed')
+#                 pass
+
+
+
+# def rename_files(filename):
+#             data=fits.open(filename)
+#             header=data[0].header
+#             image=data[0].data
+#             obj = header['OBJECT']
+#             date_obs = header['DATE-OBS']
+#             telescope = header['TELESCOP']
+#             instru = header['INSTRUME']
+#             if (obj == 'flat' or obj == 'FLAT' or obj == 'Flat'):
+#                 code = 'F'
+#             elif (obj == 'bias' or obj == 'BIAS' or obj == 'Bias'):
+#                 code = 'B'
+#             elif (obj == 'test' or obj == 'TEST' or obj == 'Test'):
+#                 code = 'T' 
+#             else:
+#                 code = 'S'
+#             new_name=code+'-2019APXX-'+date_obs+'-'+telescope+'-'+instru+'.fits'
+#             try:
+#                 os.rename(filename,new_name)
+#             except FileNotFoundError:
+#                 pass
+#             #print(header.keys())
+
+#             (prefix, sep, suffix) = new_name.rpartition('.')
+#             thumb_name=prefix
+#            # print(thumb_path+'/{}.png'.format(thumb_name))
+
+#             if ('CRVAL1' in header.keys()):
+#                 print(filename,'astrometry done')
+#                 try:
+#                     f1=aplpy.FITSFigure(new_name)
+#                     f1.show_grayscale()
+#                     f1.axis_labels.set_xtext('RA (J2000)')
+#                     f1.axis_labels.set_ytext('Dec (J2000)')
+#                     f1.save('thumbnails/{}.jpg'.format(thumb_name),dpi=60)
+#                     print('Thumbnail saved!!')
+      
+#                 except KeyError:
+#                     print("Keyword issue!")     
+#                 except TypeError:
+#                     print ("Kinetic mode image..no thumbnail generated!!!")      
+             
+
 def execute_task(ctext, telescopename):
     """
     Updates and Homogenizes Header Details of Optical Data from ST, DFOT and DOT.
@@ -569,18 +709,32 @@ def execute_task(ctext, telescopename):
     """
     # Performs homogenizing and updating the Header
     for filename in glob.glob(ctext):
+        print("filname:::::::::::::::::::", filename)
         append_nullheader(telescopename, filename)
+        print("******* Step 1: Null header done")
         append_templatefiledetails(filename)
+        print("******* Step 2: template header done ")
         append_telescopedetails(telescopename, instrument_df, filename)
+        print("******* Step 3: telescope header ")
         format_header(telescopename, filename)
+        print("******* Step 4: format header ")
         # fix_invalidheaders(filename)
 
     # Performs Astrometry and updates the Header with Astrometry Keywords
     for filename in glob.glob(ctext):
         if identify_imagetype(filename):
+            print("******* Step 5: start astrometry ")
             if do_astrometry(telescopename, filename):
+                print("******* Step 6: appending astrometry header ")
                 append_astrometryheader(filename)
+                print("******* Step 7: astrometry done ")
                 calculate_airmass(telescopename, filename)
+                print("******* Step 8: successful")
+            
+        #check_astrometry(filename)
+        #print('************* Step 9: astrometry check done')
+        #rename_files(filename)
+        #print('******** Step 10: File has been renamed')
 
 
 def main():
@@ -590,11 +744,11 @@ def main():
     """
     # Manual Setup - GUI Code
     # --------------------------------------------------------------------------------------------------------------- #
-    # TELESCOPE = eg.choicebox(msg='Select The Name of the Telescope!', title='Name of the Telescope',
-    #                          choices=telescope_df.index.values)
+    #TELESCOPE = eg.choicebox(msg='Select The Name of the Telescope!', title='Name of the Telescope',
+     #                         choices=telescope_df.index.values)
     #     os.path.join(root, filename)
 
-    ctext = '*.fits'
+    ctext = '*.fits' 
     TELESCOPE = 'DFOT'
 
     # Convert .PMI to .FITS
@@ -602,7 +756,6 @@ def main():
     # Run the Tasks on All the Files in the Directory
     # --------------------------------------------------------------------------------------------------------------- #
     execute_task(ctext, TELESCOPE)
-
     # for root, dirs, files in os.walk(directory):
     #     if group_similar_files('ListFiles', '*.pmi'):
     #         pmitofits(group_similar_files('ListFiles', '*.pmi'):)
