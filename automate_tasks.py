@@ -13,7 +13,7 @@ import fnmatch
 
 warnings.filterwarnings('ignore')
 
-def check_template_file(filename):
+#def check_template_file(filename):
 
 def prepare_the_files(filepath):
     '''
