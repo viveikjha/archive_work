@@ -1,6 +1,7 @@
 import numpy as np
 from astropy.time import Time
 
+#MJD, Temperature, Humidity, RA,Dec, Airmass, Altitude, Azimuth, Rotator
 
 parameters = {
     "NB": {
@@ -96,6 +97,5 @@ with open ('ics_log.txt', 'r') as log:
             t = Time(datetime_string, format='isot', scale='utc')
             t.format = 'fits'
 
-            print(f"Date: {date}, Time: {time}, Position: {position}, Number: {number}")
+            #print(f"Date: {date}, Time: {time}, Position: {position}, Number: {number}")
             print(f"T: {t}, Position: {mapped_position}, Param: {param[num]}")
-            print('----')
