@@ -24,19 +24,8 @@ with open ('telnet_log.txt', 'r') as log:
             data = dict(zip(['date', 'time', 'MJD', 'temperature', 'humidity'], date_time + components[6:]))
             tcsweather.append(data)
 
-        all_data = tcsdata + tcsmount + tcsweather
-        # date_str = tcsdata['date']
-        # time_str = tcsdata['time']
-        # day, month, year = date_str.split('/')
-        # date_string = '-'.join([year, month, day])
-        # datetime_string = date_string + 'T' + time_str
-        # t = Time(datetime_string, format='isot', scale='utc')
-        # t.format = 'fits'   
-        # print(t)
-    # for data in tcsweather:
-    #     print(data['time'])
-
-          
+        #all_data = tcsdata + tcsmount + tcsweather
+     
 
 for iteration in range(len(tcsdata)):
     data = tcsdata[iteration]
