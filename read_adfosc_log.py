@@ -1,7 +1,19 @@
 import numpy as np
-from astropy.time import Time
+from astropy.time import Time, TimeDelta
+from astropy.io import fits
+import glob
+import os,sys
+import time
+import astropy.units as u
 
 #MJD, Temperature, Humidity, RA,Dec, Airmass, Altitude, Azimuth, Rotator
+log_path='/data/astro_data/raw_data/DOT/dot_adfosc/Log_ADFOSC_Telescope/'
+fits_path='/data/astro_data/raw_data/DOT/dot_adfosc/2022-C2/2023-01-14/P23/'
+
+adfosc_log=sorted(glob.glob(log_path+'*adfosc_ics*.txt'))
+telnet_log=sorted(glob.glob(log_path+'*tcs_telnet*.txcd t'))
+fits_files=sorted(glob.glob(fits_path+'*fit'))
+
 
 parameters = {
     "NB": {
@@ -77,6 +89,9 @@ name_map = {
 def read_adfosc(file):
     with open(file, 'r') as log:
         text = log.read()
+        t_list=[]
+        map_pos=[]
+        par_num=[]
         lines = text.split("\n")
         for line in lines:
             if line.strip() != "":
@@ -90,15 +105,21 @@ def read_adfosc(file):
                     if mapped_position == key:
                         param = parameters[key]
                         num = int(number)
+                       
                 date_string = date
                 day, month, year = date_string.split('/')
                 date_string = '-'.join([year, month, day])
                 datetime_string = date_string + 'T' + time
-                t = Time(datetime_string, format='isot', scale='utc')
-                t.format = 'fits'
-                print(f"date_time: {t}, Position: {mapped_position}, Param: {param[num]}")
-
-
+                t = Time(datetime_string, format='isot', scale='local')
+                t.format = 'isot'
+                #date_time=t.datetime
+                #print(f"{t}, {mapped_position},{param[num]}")
+                t_list.append(t.value)
+                map_pos.append(mapped_position)
+                par_num.append(param[num])
+                #return({t}.isoformat())
+        return t_list, map_pos, par_num
+        
 def read_telnet(file):
     with open(file, 'r') as log:
         text = log.read()
@@ -148,9 +169,84 @@ def read_telnet(file):
                 if key not in ['date', 'time', 'MJD']:
                     output.append(f"{key}: {value}")
 
-            print(output)
+            #print(output)
+            return(output)
+
+def time_from_file(filename):
+    data=fits.open(filename)
+    header=data[0].header
+    time=header['DATE-OBS']
+    return time
+
+
+times=[]
+
+for i in range (len(fits_files)):
+    time1=time_from_file(fits_files[i])
+    times.append(time1)
+
+log_time=np.genfromtxt('read_adfosc_log.dat',usecols=1,dtype=str)
+delta=TimeDelta(5 * u.second)
+for i in range (len(log_time)):
+    log_td=Time(log_time[i])
+    t1=log_td+delta
+    t2=log_td-delta
+    for j in range(len(times)):
+        time_fits=Time(times[j])
+        if t1<time_fits<t2:
+            print(log_time[i],times[j])
+
+# for lt, t in zip(log_time, times):
+#     if lt != t:
+#         print(lt, t)
+
+# start_time = time.time()
+# for i in range (len(adfosc_log)):
+
+#     try:
+#         a,b,c=read_adfosc(adfosc_log[i])
+#         t = Time(a, format='isot', scale='utc')
+#         date_string = [date.datetime.strftime('%d%m%Y') for date  in t]
+#         result = [year_month for year_month in date_string if year_month == '15012023']
+#         for k in range (len(result)):
+#             for t in range (len(time))
+#             print(result[k],a[k],b[k],c[k])
+#     except:
+#         pass
+
+# end_time = time.time()
+# elapsed_time = end_time - start_time
+# print(f" Searching ADFOSC log for a day executed in: {elapsed_time} seconds")
+
+#Searching ADFOSC log for a day executed in: 1060.827548980713 seconds
+
+print(times)  
+
+#print(times)
+# files=sorted(glob.glob("*fit"))
+# len(files)
+# for i in range (len(files)):
+#     data=fits.open(files[i])
+#     header=data[0].header
+#     time=header['DATE-OBS']
+#     print(files[i],time)
 
 
 
-read_adfosc('ics_log.txt')
-read_telnet('telnet_log.txt')
+#files = glob.glob('*.txt')
+def create_database(input_time,dir_path):
+    time=input_time
+    for file in dir_path:
+        if 'adfosc_telnet' in file or 'tcs_telnet' in file:
+            date_time_str = file.split("_")[3:9]
+            date_time_str = "-".join(date_time_str[:3]) + "T" + ":".join(date_time_str[3:]).split(".")[0]
+            t = Time(date_time_str, format='isot', scale='utc')
+            new_file_name = file.replace(date_time_str.replace("T", "_").replace("-", "_").replace(":", "_"), t.isot)
+            #os.rename(file, new_file_name)
+
+            t = Time(new_file_name, format='isot')
+            date = t.iso.split()[0]
+            time = t.iso.split()[1]
+
+            print(f"Date: {date}")
+            print(f"Time: {time}")
