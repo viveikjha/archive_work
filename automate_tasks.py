@@ -63,7 +63,7 @@ def prepare_the_files(filepath):
 
 def check_astrometry(filepath):
     '''
-    This module checks each file, and informs whether astrometry has bee successfully run or not. If the astrometry is successful, it returns 'astrometry successful' as message and if it has failed, it moves the file to the 'failed_round1' directory.
+    This module checks each file, and informs whether astrometry has been successfully run or not. If the astrometry is successful, it returns 'astrometry successful' as message and if it has failed, it moves the file to the 'failed_round1' directory.
     '''
     processed_path=folder_name
     failed_folder='failed_round1'
