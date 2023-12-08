@@ -1,4 +1,194 @@
 DATE   (yyyy/mm/dd),OBSERVER,OPERATOR,INSTRUMENT,FILTER,FOCUS,OBJECT,R.A.,DEC,EXP.TIME,BEG.UT,AM,IMAGE FILE(*.fits),Proposal Type,COMMENT
+2023-12-07,tarakchand,Gaurav,2kx2k,"V,R,I,H-alpha",1847,V733 Cep,22 53 33.2,+62 32 23.6,"120, 240, 300, ",12:40,1.18,V733Cep_I_120s*.fits,Regular,single and kinetic scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"B,V,I",1847,NGC 7538,23 13 37.2,+61 30 00,"180,240,300",16:20,1.45,NGC7538_B_300s*.fits,Regular,single or kinetic scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"B,V,I",1846,Sh2-173,00 21 16,+61 43 30,"90,150,240",16:53,1.36,Sh2-173_BVI*.fits,Regular,single or kinetic scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"B,V,I",1847,NGC 2367,07 20 07,-21 52 01,"120, 180, 240",18:00,2.56,NGC2367_I*.fits,Regular,single and kinetic scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"B,V,R,I",1847,5BZQJ0522-0725,05 22 23.2,-07 25 13.4,"90, 120, 150, 1",19:00,1.25,5BZQJ0522_I_90s*.fits,Regular,single  scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"B,V,R,I",1847,Mrk 421,11 04 27.3,+38 12 31.6,"30, 30, 60, 90",23:35,1.03,Mrk421_I_30s*.fits,Regular,single  scan
+2023-12-07,tarakchand,Balmukund,2kx2k,"U,B,V,R,I",1847,B2 1308+326,13 10 28.66,+32 20 43.7,90 150 180 240 ,23:50,1.26,B21308_I_90s*.fits,Regular,single  scan
+2023-12-06,amitror,Balmukund,2kx2k,"R,I",1847,SN2023ngy,22 118 30.2,+29 14 41,"300*3,300*3",13 45 ,1.0,SN2023ngy_RI*.fits,Regular,kinetic scan
+2023-12-06,amitror,Balmukund,2kx2k,R,1847,GRB231205,03 36 35.7,+27 08 29,300*36,13 13 ,1.6,GRB231205_R*.fits,Regular,kinetic scan
+2023-12-06,amitror,Balmukund,2kx2k,R,1846,RJ0524,05 25 22.7,+27 08 29,180*60,17 00,1.096,RJ0524_R*.fits,Regular,kinetic scan
+2023-12-05,arjun.dawn,Balmukund,2kx2k,R,1847,RX J0153.3+7446,01 53 21.01,+74 46 22.01,120*20,13 00,1.5,RX J0153.3+7446_R*.fits,Regular,kinetic scan
+2023-12-05,arjun.dawn,Balmukund,2kx2k,R,1847,RX J0524 +42,05 25 22.7,+24 13 33,180*20,18 49,1.00,RX J0524 +42_R*.fits,Regular,kinetic scan
+2023-12-05,arjun.dawn,Balmukund,2kx2k,"U,B,V,R,I",1847,B2 1308+326,13 10 28.66,+32 20 43.7,"(300,180,150,15",23 40,1.5,B2 1308+326_UBVRI*.fits,Regular,single  scan
+2023-11-22,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1848.3,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"60,30,30,30,15",14:10;19:35,"1.08,1.624",5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan 
+2023-11-22,kiranwani,Gaurav,2kx2k,I,1848.3,sh2-173,00 21 16.0,+61 43 30,90s*3,15:16,1.186,sh2-173_I*.fits,Regular,kinetic scan
+2023-11-22,kiranwani,Gaurav,2kx2k,"R,H-alpha",1848.3,V733 Cep,22 53 33.25,+62 32 23.62,"(240,300)*3",16:09,1.345,V733_RHa*.fits,Regular,kinetic scan
+2023-11-22,kiranwani,Gaurav,2kx2k,I,1848.3,NGC7538,23 13 37.2 ,+61 30 0,180s*3,16:40,1.368,NGC7538_I*.fits,Regular,kinetic scan
+2023-11-22,kiranwani,Gaurav,2kx2k,"V,R",1848.3,NGC2126,06 02 32,+49 52 00,"(50,30)s*42",16:55,1.499,NGC2126_VR*.fits,Regular,Single scan 
+2023-11-22,kiranwani,Gaurav,2kx2k,"B,V,R,I",1848.3,5BZBJ0710+5908,07 10 30,+59 08 20 ,"(120,120)*45",19:50,1.24,5BZBJ0710+5908_VR*.fits,Regular,Single scan 
+2023-11-22,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1848.3,1ES1101-232,11 03 37.61,-23 29 31.20 ,"150,120,90,90,6",23:30,2.1,1ES1101-232_UBVRI*.fits,Regular,Single scan 
+2023-11-22,kiranwani,Gaurav,2kx2k,"V,R",1848.3,GJ3147,02 17 10.01,+35 26 32.54,"(120,60)*36",13 30,1.369,GJ3147_VR*.fits,Regular,Single scan 
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023ref,22 10 30.64,40 53 37,"300*3, 300, 200",12 45,1.0,2023ref*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,R,1846,SN 2023ngy,22 18 30.2,+29 14 41,300,13 20,1.0,2023ngy*.fits,Regular,single
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023rvj,00 09 57.1,+37 04 27,"300*5,200,180,1",13 30,1.0,2023rvj*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,SN 2023xtg,01 49 05.6,-14 59 12,"350,300,200,120",14 17,1.7,2023xtg*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023xrs,02 45 39.8,-20 48 36,"300*3, 300, 200",15 26,1.8,2023xrs*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,,1846,SN 2023rbk,03 15 20.6,+41 36 53,"300,250,200,200",16 05,1.1,2023rbk*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,GRB231117A,12 09 33.95 ,+13 31 23.8,"200, 150, 120, ",16 10,1.8,GRB231117A*.fits,Regular,ToO
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,GD2,00 07 33.5,+33 18 51,"150, 100, 60, 4",16 40,1.1,GD2*.fits,Regular,standard
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023rbk,03 15 20.6,+41 36 53,"300*3, 300*3, 3",17 00,1.1,2023rbk*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,SN 2023mut,04 48 34.3,+00 14 48,"300*5, 300*3, 3",18 00,1.2,2023mut*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,SN 2023xgo,05 04 19.2,+67 37 21,"300, 300, 200, ",19 57,1.2,2023xgo*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023axu,06 45 55.3,-18 13 53,"300*3, 300*3, 3",19 30,1.6,2023axu*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023ufx,08 24 51.57,+21 17 43.15,"300*3, 300, 200",20 45,1.1,2023ufx*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"B,V,R,I",1846,SN 2023tsz,08 37 29.5,-00 02 36,"(300, 300)*5, (",21 42,1.2,2023tsz*.fits,Regular,single and kinetic
+2023-11-21,kuntal,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1846,1ES1101-232,11 03 37.6,-23 29 31,"300, 180, 150, ",23 40,2.0,1ES1101-232*.fits,Regular,single
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"B,V,I",1846,NGC 7538,23 13 37.2,+61 30 00,"180, 240, 300",13:00,1.19,NGC7538_I_180s*.fits,Regular,kinetic scan
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"V,R,I,H-alpha",1847,V733 Cep,22 53 33.2,+62 32 23.6,"300, 240, 120, ",14:05,1.20,V733Cep_I_120s*.fits,Regular,kinetic scan
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"B,V,I",1847,Sh2 173,00 21 16,+61 43 30,"90,150, 240",15:20,1.18,Sh2173_I_90s*.fits,Regular,kinetic scan
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"R,H-alpha",1847,HKS2019,05 38 45.4,30 43 31,"120, 300",18:00,1.38,HKS2019_R_120s*.fits,Regular,single  scan
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"R,H-alpha",1847,LBN 168.49-00.89,05 11 00.1,+37 59 26,"120, 300",21:40,1.09,LBN168_R_120s*.fits,Regular,single  scan
+2023-11-20,tarakchand,PRAKASH SINGH DHAMI,2kx2k,"U,B,V,R,I",1847,QSO J1103-2329,11 03 37.6,-23 29 31.20,"90,150,150,180,",23:30,1.95,QSOJ1103-2329_I_80s*.fits,Regular,single  scan
+2023-11-19,pranshu,Gaurav,2kx2k,"R,I",1846,GRB20231117A,22 09 33.9,+13 31 23,5*10,14 00,1.2,GRB20231117A_RI*.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"U,B,V,R,I",1846,SN2023vbx,02 22 46,+26 27 35,"(350, 300, 300,",16 36,1.2,SN2023vbx_UBVRI*.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"U,B,V,R,I",1846,SN2023rbk,03 15 20,+41 36 53.57,"(350, 300, 300,",18 30,1.1,SN2023rbk_UBVRI*.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"B,V,R,I",1846,SN2023axu,06 45 55.3,+41 36 53.57,"(300,300)*3, (3",20 57,1.2,SN2023axu_BVRI.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"B,V,R,I",1846,SN2023tsz,08 37 29.5,-00 02 35.74,"(300, 300, 300,",21 55,1.2,SN2023tsz_BVRI.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"U,B,V,R,I",1846,1ES1101-232,11 03 37.6,-23 29 31.20,"(300, 180), (15",23 30,1.1,1ES1101-232_UBVRI.fits,Regular,kinetic scan
+2023-11-19,pranshu,Gaurav,2kx2k,"R,I",1846,ILMT_0456_1,04 56 50.4,29 21 19,"(300, 300)",19 30,1.2,ILMT_0456_1_RI*.fits,Regular,kinetic scan
+2023-11-18,dileep,Gaurav,2kx2k,"B,V,R,I",1846,GRB 231117A,22 09 33,+13 31 23,300S *12 R,16:00,1.4,GRB,Regular,Kinetic
+2023-11-18,dileep,Gaurav,2kx2k,"B,V,R,I",1846,GRB 231117A,22 09 33,+13 31 23,300s *12R 300s*,16:00,1.4,GRB231117A_R_1_12,Regular,Kinetic
+2023-11-18,dileep,Gaurav,2kx2k,"V,R",1846,NGC 2126,	06 02 38,+49 53 02,"30s R, 50s V",17:00,1.2,"NGC2126_V_*, NGC2126_R_*",Regular,Single
+2023-11-18,dileep,Gaurav,2kx2k,"B,V,R,I",1846,QSO B0109+224,01 12 05,+22 44 38,"30s B, 15s V, 1",19:00,1.3,QSOB0109+224_BVRI_*,Regular,single
+2023-11-17,amitror,Balmukund,2kx2k,R,1847,GRB 231117A,22 09 33.9,+13 31 23,300*12,13 02,1.03,GRB 231117A_R*.fits,Regular,kinetic scan
+2023-11-17,amitror,Balmukund,2kx2k,"B,V,R,I",1847,SN a2023mut,04 48 34.4,+00 14 48,300*4,17 59,1.2,SN a2023mut_BVRI*.fits,Regular,kinetic scan
+2023-11-17,amitror,Balmukund,2kx2k,"B,V,R,I",1846,SN2023mut,05 21 31,00 28 21,300*3,19 15,1.15,SN2023usc*.fits,Regular,kinetic scan
+2023-11-16,arjun.dawn,Balmukund,2kx2k,"B,V,R",1847,NGC 381,01 08 19.9,+61 35 02,"0.10,20,30,40,5",22 32,1.3,NGC381_BVR*.fits,Regular,single  scan
+2023-11-16,arjun.dawn,Balmukund,2kx2k,R,1847,RX J0153.3+746,01 53 21,+74 46 92,120*20,14 10,1.5,RX J0153.3+746_R*.fits,Regular,single  scan
+2023-11-15,jincen,Balmukund,2kx2k,"U,B,V,I",1847,SFO 44,22 28 52.2,+64 13 43,"210,180*3",15 30 ,1.2,SFO44_V*.fits,Regular,single and kinetic scan
+2023-11-15,jincen,Balmukund,2kx2k,B,1847,SFO 44,22 28 52.2,+64 13 43,240*2,15 55,1.3,SFO44_B*.fits,Regular,kinetic scan
+2023-11-15,aomar,Balmukund,2kx2k,,1846,SFO 44,22 28 52.2,+64 13 43,300*3,16 14,1.36,SFO44_U*.fits,Regular,kinetic scan
+2023-11-15,aomar,Balmukund,2kx2k,,1846,SFO 44,22 28 52.2,+64 13 43,120*3,16 31,1.409,SFO44_I*.fits,Regular,kinetic scan
+2023-11-15,jincen,Balmukund,2kx2k,"R,I",1847,GRB231115A,09 56 00.2,+69 40 48,300*15,21 12,1.5,GRB231115A_R*.fits,Regular,single and kinetic scan
+2023-11-15,jincen,Balmukund,2kx2k,I,1847,GRB231115A,09 56 00.2,+69 40 48,300*15,21 42,1.45,GRB231115A_I*fits,ToO,kinetic scan
+2023-11-14,dileep,Balmukund,2kx2k,"V,R",1847,NGC2126,06 02 32,+49 52 00,"50,30",18 27,1.2,NGC2126_VR*.fits,Regular,Single scan
+2023-11-13,arjun.dawn,Balmukund,2kx2k,"B,V,R",1846,NGC 231,01 08 19.9,+61 35 02,"0,60,120,180,24",14 40,1.2,NGC 231_V,Regular,Single scan
+2023-11-13,arjun.dawn,Balmukund,2kx2k,"B,V,R",1737,HIP 22692,04 52 46,-05 17 11,"0.01,1",17 57 ,1.4,HIP 22692_BVR*.fits,Regular,single  scan
+2023-11-13,arjun.dawn,Balmukund,2kx2k,"B,V,R",1737,HIP 117695,23 52 09.6,+43 33 31,0.05 up to 1,17,1.17,HIP 117695_BVR*.fits,Regular,Single scan
+2023-11-11,kiranwani,Balmukund,512X512,"V,R,I",1566,1ES1101-232,11 03 37.61,-23 29 31.20 ,"(300,300,180)*1",23:30,2.27,1ES1101-232_VRI*.fits,Regular,Single scan 
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,Sn2023rvj,00 09 57,+37 04 27,300*3,13 50,1.06,Sn2023rvj_BVRI,Regular, Kinetic
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,SN2023ngy,22 18 30,+29 14 41 ,300*3,14 50,1.03,SN2023ngy_BVRI,Regular, Kinetic
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,SN2023rve,02 46 18.1,-30 14 22,300*3,16 26,2.336,SN2023rve_BVRI,Regular, Kinetic
+2023-11-09,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"120,90,60,60,30",16:10,1.014,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan 
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,SN2023rbk,03 15 20.6,41  36 53,300*3,17 45,1.03,Sn2023rbk_BVRI,Regular, Kinetic
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,SN2023mut,04 48 34.4,00 14 48,300*3,19 05,1.20,Sn2023mut_BVRI,Regular, Kinetic
+2023-11-09,amitror,Gaurav,2kx2k,"B,V,R,I",1846,SN2023usc,05 21 31.6,00 28 21,300*3,20 15,1.15,SN2023usc_BVRI,Regular, Kinetic
+2023-11-08,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,TXS 2013+370,20 15 28.72978661 ,+37 10 59.514,"120,90,60,30",13:01,1.047,TXS2013+370_BVRI*.fits,Regular,Single scan 
+2023-11-08,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1846,BL Lac,22 02 43.2913,+42 16 39.979,"120,60,30,30,15",13:15,1.029,BL_Lac_UBVRI*.fits,Regular,Single scan 
+2023-11-08,kiranwani,Gaurav,2kx2k,"B,V,I",1846,NGC7538,23 13 37.2 ,+61 30 0,"300,240,180",13:28;14:36;15:47;18:12,1.21;1.18;1.20;,NGC7538_BVI*.fits,Regular,kinetic
+2023-11-08,kiranwani,Gaurav,2kx2k,"V,I",1846,V733 Cep,22 53 33.25,+62 32 23.62,"(300,120)*3",14:12,1.197,V733_VI*.fits,Regular,kinetic
+2023-11-08,kiranwani,Gaurav,2kx2k,"B,V,I",1846,sh2-173,00 21 16.0,+61 43 30,"240,150,90",15:19;17.35;19.12,1.191;1.24;1.43,sh2-173_BVI*.fits,Regular,kinetic
+2023-11-08,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"180,120,60,60,3",20:17,1.492,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan 
+2023-11-08,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1846,5BZQJ0447-0322,04 47 54.73,-03 22 42.31,"300,180,120,120",20:43,1.196,5BZQJ0447-0322_UBVRI*.fits,Regular,Single scan 
+2023-11-08,kiranwani,Gaurav,2kx2k,"U,B,V,R,I",1846,5BZQJ0522-0725,05 22 23.1,-07 25 13,"150,90,60,30,15",21:288,1.263,5BZQJ0522-0725_UBVRI*.fits,Regular,Single scan 
+2023-11-08,kiranwani,Gaurav,2kx2k,"B,V,R,I",1846,1ES1101-232,11 03 37.61,-23 29 31.20 ,"(300,180,120,90",23:37,2.641,1ES1101-232_BVRI*.fits,Regular,Single scan 
+2023-11-07,pranshu,Balmukund,2kx2k,"U,B,V,R,I",1846,SN2023ngy,22 18 30.183,40 53 37.7,"300*5 , (300,30",13 11,1.05,SN2023ngy_VRI*.fits,ToO,kinetic scan
+2023-11-07,aomar,Balmukund,2kx2k,,1846,SN2023rvj,00 09 57.1,37 04 27.27,"(350,300,250,20",14 41,1.037,SN2023rvj_UBVRI*.fits,Regular,kinetic scan
+2023-11-07,pranshu,Balmukund,2kx2k,"B,V,R,I",1846,SN2023rbk,3 15 20.6,41 36 53,"(300,250,200,20",15 51,1.2,SN2023rbk_BVRI.fits,ToO,kinteic scan
+2023-11-07,pranshu,Balmukund,2kx2k,"U,B,V,R,I",1846,SN2023mut,04 48 34,00 14 48,"(300,300,200,18",16 50,1.2,SN2023mut_UBVRI.fits,ToO,kinetic scan
+2023-11-07,pranshu,Balmukund,2kx2k,,1846,F24,02 35 17,03 42 54,(90 60 30 20 20,18 00,1.2,F24_UBVRI.fits,ToO,single  scan
+2023-11-07,pranshu,Balmukund,2kx2k,"B,V,R,I",1846,SN2023axu,06 45 55,-18 13 53,"(300,300)*3, (3",19 02,2.6,SN2023axu_BVRI.fits,ToO,kinetic scan
+2023-11-07,pranshu,Balmukund,2kx2k,"U,B,V,R,I",1846,SN2023ufx,08 24 51.57,21 17 43,"300*3, (300,240",19 02,2.6,SN2023ufx_UBVRI.fits,ToO,kinetic scan
+2023-11-07,pranshu,Balmukund,2kx2k,"U,B,V,R,I",1846,SN2023tsz,08 37 29.5,21 17 43,"(300,300)*3, (3",20 59,1.726,SN2023tsz_UBVRI.fits,ToO,kinetic scan
+2023-11-07,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"120,60,30,30,15",18:40,1.111,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan
+2023-11-07,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,1ES1101-232,11 03 37.61,-23 29 31.20 ,"300,180,150,90,",23:32,2.812,1ES1101-232_BVRI*.fits,Regular,Single scan 
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,I",1846,NGC7538,23 13 37.2 ,+61 30 0,"300,240,180","13:00,14:05,16:30,18:45",1.25,NGC7538_BVI*.fits,Regular,kinetic
+2023-11-06,kiranwani,Balmukund,2kx2k,"V,I",1846,V733 Cep,22 53 33.25,+62 32 23.62,"300,120",13:35,1.3,V733_VI*.fits,Regular,kinetic
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,I",1846,sh2-173,00 21 16.0,+61 43 30,"240,150.90","16:00,18:15,19:35",1.1,sh2-173_BVI*.fits,Regular,kinetic
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"120,60,30,30,15",20:20,1.455,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,5BZQJ0112+3208,01 12 50.33,+32 08 17.43,"300,200,150,90",20:30,1.452,5BZQJ0112+3208_BVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0310+4056,03 10 6.3 ,+40 56 54.81,"120,60,30,30,15",20:50,1.124,5BZBJ0310+4056_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0326+0225,03 26 13.97,+02 25 14.69,"300,200,150,120",21:00,1.282,5BZBJ0326+0225_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0521+2112,05 21 45.96   ,+21 12 51.51,"300,200,120,90,",21:20,1.014,5BZBJ0521+2112_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0710+4732,07 10 46.09,+47 32 11.11,"60,30,15,15,15",21:40,1.081,5BZBJ0710+4732_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,5BZBJ0710+5908,07 10 30,+59 08 20 ,"240,180,120,60",21:55,1.169,5BZBJ0710+5908_BVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0738+1742,07 38 07 ,+17 42 19,"240,150,90.60,3",22:30,1.039,5BZBJ0738+1742_UBVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,5BZBJ0757+0956,07 57 6.64 ,+09 56 34.9,"300,150,90,60",23:00,1.075,5BZBJ0757+0956_BVRI*.fits,Regular,Single scan
+2023-11-06,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,1ES1101-232,11 03 37.6150845072 ,-23 29 31.203773520 ,"240,180,120,60",23:35,2.704,1ES1101-232_BVRI*.fits,Regular,Single scan
+2023-11-05,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846.9,5BZBJ2250+3824,22 50 05.7,+38 24 37,"240.120,120,90",13 30 ,1.1,5BZBJ2250+3824_BVRI*.fits,Regular,single  scan
+2023-11-05,tarakchand,Balmukund,2kx2k,"B,V,I",1846,NGC7538,23 13 37.2 ,+61 30 0,"300,240,180",18:35,1.494,NGC7538_BVI*.fits,Regular,kinetic
+2023-11-05,tarakchand,Balmukund,2kx2k,"B,V,I",1846,sh2-173,00 21 16.0,+61 43 30,"240,150,90",19:10,1.389,sh2-173_BVI*.fits,Regular,kinetic
+2023-11-05,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"120,60,30,30,15",19:45,1.25,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan
+2023-11-05,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZQJ0522-0725,05 22 23.1,-07 25 13,"120,60,30,30,15",20:00,1.3,5BZQJ0522-0725_UBVRI*.fits,Regular,Single scan
+2023-11-04,amitror,Balmukund,2kx2k,R,1846.9,GRB 231104A,01 35 13.5,+83 47 36,300*6,13 44,1.8,GRB 231104A_R*.fits,ToO,kinetic scan
+2023-11-04,tarakchand,Balmukund,2kx2k,"B,V,I",1846.9,NGC 7538,23 13 37.2,+61 30 00,"300,240,180",16 31,1.22,NGC 7538_IVB*.fits,Regular,single  scan
+2023-11-04,tarakchand,Balmukund,2kx2k,"V,I",1846.9,V733 Cep,22 53 33.2,+62 32 23,"120*3, 300*3",17:20,1.38,"V733_I_120s_*,fits",Regular,kinetic scan
+2023-11-04,tarakchand,Balmukund,2kx2k,"B,V,I",1846.9,Sh2-173,00 21 16,61 43 30,"90,150,240",19:10,1.45,Sh2173_I_90s*.fits,Regular,kinetic scan
+2023-11-04,tarakchand,Balmukund,2kx2k,"B,V,R,I",1846.9,5BZQJ0447-0322,04 74 57.7,-03 22 42.3,"120,180,180,300",20:45,1.19,5BZQJ0447-0322_I_120s*.fits,Regular,single  scan
+2023-11-03,tarakchand,Nikhil,2kx2k,"B,V,I",1846.9,NGC 7538,23 13 37.2,+61 30 00,"300,240,180",17:30,1.3,NGC7538_B_300s*.fits,Regular,single  scan
+2023-11-03,tarakchand,Nikhil,2kx2k,"B,V,I",1846.9,V733 Cep,22 53 33.2,+62 32 23,"300,180,120",17:00,1.21,V733_B_300*.fits,Regular,single  scan
+2023-11-03,tarakchand,Nikhil,2kx2k,I,1846.9,Sh2-173,00 21 16,+61 43 30,90,19:30,1.12,sh2173_I_90s*.fits,Regular,kinetic scan
+2023-11-01,aomar,Balmukund,2kx2k,"V,R,I",1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,DDT,testpavan
+2023-11-01,tarakchand,"Balmukund,Gaurav",2kx2k,"B,V,R,I",1846,BL Lac,22 02 43.2913,+42 16 39.979,"120,90,60,30",14:00,1.01,BL_Lac_BVRI*.fits,Regular,Single scan
+2023-11-01,tarakchand,Balmukund,2kx2k,"B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"180,120,90,60",14:22,1.273,5BZBJ0112+2244_BVRI*.fits,Regular,Single scan
+2023-11-01,tarakchand,Balmukund,2kx2k,I,1846,V733 Cep,22 53 33.25,+62 32 23.62,120*3,15:00,1.2,V733_I*.fits,Regular,kinetic scan
+2023-10-31,brij,Balmukund,2kx2k,"U,B",1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,DDT,testpavan
+2023-10-31,aomar,Balmukund,2kx2k,"B,V",1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,DDT,testpavan
+2023-10-31,aomar,Balmukund,2kx2k,"U,B,V,R,I,u,g,r,i,z,H-alpha,OIII,SII",1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavantestpavan,DDT,testpavan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,BL Lac,22 02 43.2,+42 16 39.979,"60,30,15,15,15",13 00,1.2,BL_Lac_UBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,3C 454.3,22 53 57.7,+16 08 53,"120,150,90,60,3",13 30,1.137,3C454.3_UVBRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0112+2244,01 12 05.81,+22 44 38.79,"(30,30-VR)*200,",14:05; 17:15; 18:45,1.55;1.014;1.03,5BZBJ0112+2244_UBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,I,1846,NGC7538,23 13 37.2 ,+61 30 0,(150s-I)*3,17:00,1.211,NGC7538_I*.fits,Regular,kinetic
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,Ao0235+164,02 38 38.93,+16 36 59.275,"240,150,120,120",18:25,1.042,Ao0235+164_UVBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZQJ0447-0322,04 47 54.73,-03 22 42.31,"200,150,90,90,6",21:50,1.198,5BZQJ0447-0322_UBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0310+4056,03 10 6.3 ,+40 56 54.81,"120,60,30,30,15",22:20,1.214,5BZBJ0310+4056_UBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0326+0225,03 26 13.97,+02 25 14.69,"240,150,90,90,6",22:35,1.4,5BZBJ0326+0225_UBVRI*.fits,Regular,Single scan
+2023-10-23,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,5BZBJ0710+5908,07 10 30,+59 08 20 ,"240,150,90,90,6",23:10,1.158,5BZBJ0710+5908_UBVRI*.fits,Regular,Single scan
+2023-10-19,rishic,Nikhil,2kx2k,I,1846,NGC 7538,23 13 37.2,+61 30 00,150*3,8:30,1.186,ngc7538_I_150s*.fits,Regular,kinetic scan
+2023-10-19,rishic,Nikhil,2kx2k,"U,H-alpha,OIII",1846,sfo44,22 28 52.2,+64 13 43,600*5,9:00,1.186,sfo44_UH-alphaOIII*.fits,Regular,kinetic scan
+2023-10-19,rishic,Nikhil,2kx2k,"V,R,I",1846,sfo7,02 34 48.91,+61 46 43.0,"240,150,60,30",12:15,1.186,sfo7_VRI*.fits,Regular,single  scan
+2023-10-19,srinivas,Balmukund,2kx2k,R,1846.9,RX J0153.3+7446,01 53 21.0,+74 46 22,120*20,15 44,1.5,RX J0153.3+7446_R_*.fits,Regular,kinetic scan
+2023-10-18,rishic,Nikhil,2kx2k,I,1846.9,ngc 7538,23 13 37.2,+61 30 00,150*3,20:30,1.263,ngc7538_I_150s*.fits,Regular,kinetic scan
+2023-10-18,rishic,Nikhil,2kx2k,"V,R,I",1846,sfo7,02 34 48.91,+61 46 43.0,"240,150,60,30",2:15,1.129,sfo7_VRI*.fits,Regular,single  scan
+2023-10-18,rishic,Nikhil,2kx2k,R,1846,GRB231017A,05 44 39.99,+56 44 55.3,100*36,3:30,1.129,GRB231017A_R*.fits,Regular,kinetic scan
+2023-10-18,rishic,Nikhil,2kx2k,"B,V,I",1846,sfo44,22 28 52.2,+64 13 43,"600*6,240*10,60",21 30,1.18,sfo44_BVIH-alpha*.fits,Regular,kinetic scan
+2023-10-15,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846.9,5BZBJ0112+2244,01 12 05,+22 4438,"200,120,120,60",17 28,1.02,5BZBJ0112+2244_BVRI*.fits,Regular,single  scan
+2023-10-15,sneh,Balmukund,2kx2k,"U,B,V,R,I",1846.9,NGC 7209,22 18 30.183,+00 46 00,"(300,150,60,40,",17 18,1.55,NGC 7209_UBVRI*.fits,Regular,single  scan
+2023-10-10,neelam,Balmukund,2kx2k,"U,B",1846,pavan,pavan,pavan,pavan,pavan,pavan,pavan,Regular,pavan
+2023-06-11,aayushiverma,Gaurav,2kx2k,U,1848.8,SN2023ixf,14 03 38.6,+54 18 42,"(200,180,150,12",15 27,1.120,SN2023ixf_UBVRI*.fits,Regular,kinetic
+2023-06-11,aayushiverma,Gaurav,2kx2k,V,1848.8,collinder 347,17 46 22,-29 19 30,210*50,17:10,2.1,collinder347_V_*.fits,Regular,kinetic scan
+2023-06-11,aayushiverma,Gaurav,2kx2k,I,1848.8,NGC 6530,18 04 31,-24 21 30,60*40,18:00,1.7,ngc6530_I*.fits,Regular,kinetic scan
+2023-06-09,aayushiverma,Balmukund,2kx2k,V,1848.8,collinder 347,17 46 22,-29 19 30,210*3,17:00,2.2,collinder_V*.fits,Regular,kinetic scan
+2023-06-09,aayushiverma,Balmukund,2kx2k,"U,B,V,R,I",1848.8,SN2023ixf,14 03 38.6,+54 18 42,"120,60,30,20,20",15 35,1.8,SN2023ixf_UBVRI*.fits,Regular,Single and Kinetic scan
+2023-06-09,aayushiverma,Balmukund,2kx2k,I,1848.8,NGC 6530,18 04 31 ,-24 21 30,60*100,17:30,2.0,ngc6530_I*.fits,Regular,kinetic scan
+2023-06-09,aayushiverma,Balmukund,2kx2k,V,1846,collinder 347,17 46 22,-29 19 30,210*2,19:30,1.6,collinder_V*.fits,Regular,kinetic scan
+2023-06-09,aayushiverma,Balmukund,2kx2k,I,1848.8,NGC 6530,18 04 08,-24 21 30,60*110,19:50,1.7,ngc6530_I*.fits,Regular,kinetic scan
+2023-06-07,aayushiverma,Balmukund,2kx2k,"U,B,V,R,I",1848.8,SN2023ixf,14 03  38.6,+5418 42,"120,60,30,20,20",15 31,1.0,SN2023ixf_UBVRI*.fits,Regular,Single Scan
+2023-06-06,brajesh,Balmukund,2kx2k,"U,B,V,R,I",1846.8,SN 2023ixf,14 03 38.5,+54 18 42,"90,40,30,30,30",16:15,1.2,SN 2023ixf_UBVRI*.fits,DDT,single  scan
+2023-06-05,brajesh,Gaurav,2kx2k,"U,B,V,R,I",1848.8,SN 2023ixf,14 03 38.5,+54 18 41.94,"(90*2),(60*2),(",15 40,1.1,SN 2023ixf_UBVRI*.fits,Regular,single  scan
+2023-06-02,brajesh,PRAKASH SINGH DHAMI,2kx2k,I,1846,NGC6611,18 18 48,-13 48 24,50*5,17 45,1.8,NGC6611_I_*.fits,DDT,Single
+2023-06-02,brajesh,PRAKASH SINGH DHAMI,2kx2k,V,1846,NGC6611,18 18 48,-13 48 24,50*8,17 53,1.6,NGC6611_V_*.fits,DDT,Single
+2023-06-02,brajesh,PRAKASH SINGH DHAMI,2kx2k,V,1846,NGC6611,18 18 48,-13 48 24,50*20,18 10,1.6,NGC6611_V_*.fits,DDT,kinetic scan
+2023-05-27,kiranwani,Balmukund,2kx2k,"B,V,R,I",1848.8,BZQJ1512-0905,15 12 50.5,-09 05 59,"240,180,120,90",15 58,1.4,BZQJ1512-0905_BVRI*.fits,Regular,single  scan
+2023-05-27,kiranwani,Balmukund,2kx2k,"B,V,R,I",1848.8,BZQJ1738+3224,17 38 40.4,+32 24 09,"300,180,150,120",16 25 ,1.4,BZQJ1738+3224BVRI*.fits,Regular,single  scan
+2023-05-27,kiranwani,Balmukund,2kx2k,"U,B,V,R,I",1846,SN2023ixf,14 03 38.6,+54 18 41.94,"(90,90,60,50,50",18 54,1.4,SN2023ixf_UBVRI*.fits,Regular,single  scan
+2023-05-27,kiranwani,Balmukund,2kx2k,"B,V,R,I",1846,BL Lac,22 02 43.2,+42 16 39.0,"(120,90,60,30)",22 28,1.08,BL_Lac_BVRI*.fits,Regular,single  scan
+2023-05-22,kiranwani,Balmukund,2kx2k,"B,V,R,I",1848.8,5BZQJ1512-0905,15 12 50.52,-09 05 59.78,"240,180,120,90",15 45 ,1.4,5BZQJ1512-0905_bVBRI*.fits,Regular,single  scan
+2023-05-16,alaxender,Gaurav,2kx2k,"B,V,R,I",1848.8,SN2023bhv,08 46 16.6,+27 21 05,300,14 41,1.249,"SN2023bhv_I(R,V,B)_01",Regular,"I,R,V,B bands 3 frames in each"
+2023-05-16,alaxender,Gaurav,2kx2k,"B,V,R,I",1848.8,SN2022aagp,09 10 41.9,+07 12 20,300,15 51,1.733,"SN2022aagp_I(R,V,B)_01 	",Regular,single scan
+2023-05-16,alaxender,Gaurav,2kx2k,"B,V,R,I",1848.8,SN2023bsg,12 29 49.6,+22 22 18,300,16 16,1.021,"SN2023bsg_I(R,V,B)_01",Regular,"I,R,V,B bands 3 frames in each"
+2023-05-16,alaxender,Gaurav,2kx2k,R,1848.8,NGC6709,18 51 18,+10 19 06,10,18 23,1.662,NGC6709_R_01-15,Regular,kinetic mode
+2023-05-16,alaxender,Gaurav,2kx2k,R,1848.8,NGC7086,21 30 27,+51 36 00,10,20 56,.431,NGC7086_R_01*,Regular,kinetic mode
+2023-05-14,aayushiverma,Balmukund,2kx2k,"B,V,I",1848.8,SA 110,18 43 12,+00 29 21,"(60*3,300*5)(30",18 22,1.9,SA 110_UBVI*.fits,Regular,Single scan
+2023-05-14,aayushiverma,Balmukund,2kx2k,"U,B,V,I",1848.8,SA107,15 39 10,-00 16 44,"(60*3,300*5),(6",19 44,1.18,SA107_UBVI*.fits,Regular,single  scan
+2023-05-14,aayushiverma,Balmukund,2kx2k,"U,B,V,I",1848.8,(CPA2006)134,19 55 03.2,+27 12 28,"(60*3,300*5),(6",19 28 ,1.4,(CPA2006)134_UBVI*.fits,Regular,Single Scan
+2023-05-12,aayushiverma,Gaurav,2kx2k,"V,I",1848.8,sh2 58,18 31 22 ,-08 28 00,"300*12, 300*12",18 20,2.2,sh2_58_IV*.fits,Regular,kinetic scan
+2023-05-12,aayushiverma,Gaurav,2kx2k,I,1848.8,collinder 347,17 46 22.8,-29 19 30,"90*3,20*3",20:20,1.9,collider347_I*.fits,Regular,kinetic scan
+2023-05-12,aayushiverma,Gaurav,2kx2k,I,1848.8,NGC 6531,18 04 08.6,-22 30 18,"60*3,10*3",20:30,1.6,ngc6531_I*.fits,Regular,kinetic scan
+2023-05-12,aayushiverma,Gaurav,2kx2k,I,1848.8,NGC 6604,18 18 03,-12 14 30,"60*3,10*3",20:40,1.3,ngc6604_I*.fits,Regular,kinetic scan
+2023-05-12,aayushiverma,Gaurav,2kx2k,"V,I",1848.8,AFGL_G018,18 25 01,-13 15 36,"300*12, 300*12",20:50,1.4,afgl_g018_IV*.fits,Regular,kinetic scan
+2023-05-10,karandogra,Balmukund,2kx2k,"B,V,R,I",1848.8,S4 0954+658,09 58 47.244,+65 33 54.80,"280,200,140,80",15 58,1.3,S4 0954+658_VBRI.*fits,Regular,Single Scan
+2023-05-10,karandogra,Balmukund,2kx2k,"B,V,R,I",1848.8,Ton 599,11 59 31.834,+29 14 43.826,"180,100,80,40",16 24,1.02,Ton 599_VBRI*.fits,Regular,Single Scan
+2023-05-10,karandogra,Balmukund,2kx2k,I,1846,collinder 347,17 46 22,-29 19 30,60*3,19:00,1.8,collinder347_I_*.fits,Regular,"kinetic scan,single scan"
+2023-05-10,karandogra,Balmukund,2kx2k,I,1846,NGC 6531,18 04 08,-22 30 18,90*3,19:20,1.9,ngc6531_I*.fits,Regular,kinetic scan
+2023-05-10,karandogra,Balmukund,2kx2k,I,1846,NGC 6604,18 18 03,-12 14 30,90*3,19:40,1.9,ngc6604_I_*.fits,Regular,kinetic scan
+2023-05-10,karandogra,Balmukund,2kx2k,I,1846,MRK 501,16 53 52.2,+39 45 36,"60,90,120,150",20:00,1.4,mrk501_IRVB*.fits,Regular,single  scan
+2023-05-10,karandogra,Balmukund,2kx2k,R,1846,GRB 230510A,21 12 31,34 26 32,180*20,21:50,1.3,grb230510a_R.fits,Regular,kinetic scan
+2023-05-09,aayushiverma,Balmukund,2kx2k,I,1848.8,collinder 347,17 4622.8,-29 19 30,90,19 40 ,2.2,collinder 347_I_01,Regular,Single Scan
+2023-05-09,aayushiverma,Balmukund,2kx2k,"V,R,I",1848.8,NGC 6531,18 04 08,-22 30 18,"(150,120,90)*3",19 50,1.9,NGC 6531_VRI*.fits,Regular,Kinetic Scan
+2023-05-09,aayushiverma,Balmukund,2kx2k,I,1848.8,NGC 6604,18 18 03,-12 14 30,"90*3,10*3",20 40 ,1.4,NGC 6604_I*.fits,Regular,Kinetic Scan
 2023-04-25,jincen,Gaurav,2kx2k,V,1848.8,SDSS J134332.09+253157.7,13 43 32.1 ,+25 31 57,(300*1)2,18 53 ,1.015,J134332_V_300s*.fits,Regular,single  scan
 2023-04-25,jincen,Gaurav,2kx2k,H-alpha,1848.8,SDSS J134332.09+253157.7,13 43 32.1,+25 31 57,(200*3)2,19 02,1.022,J134332_Ha_200s*.fits,Regular,Single and Kinetic scan
 2023-04-25,jincen,Gaurav,2kx2k,S-II,1848.8,SDSS J134332.09+253157.7,13 43 32.1,+25 31 57,(200*3)2,19 16,1.034,J134332_SII_200s*.fits,Regular,kinetic scan
@@ -7,10 +197,6 @@ DATE   (yyyy/mm/dd),OBSERVER,OPERATOR,INSTRUMENT,FILTER,FOCUS,OBJECT,R.A.,DEC
 2023-04-25,jincen,Gaurav,2kx2k,S-II,1848.8,SDSS J152637.36+065941.6,15 27 52.4,06 55 29,(200*3)3,20 40,1.103,J152637_SII_200s*.fits,Regular,kinetic scan
 2023-04-25,jincen,Gaurav,2kx2k,V,1848.8,SDSS J153425.59+040806.7,15 34 25.5,+04 08 06,(200*3)4,22 28,1.380,J153425_V_200s*.fits,Regular,kinetic scan
 2023-04-25,jincen,Gaurav,2kx2k,V,1848.8,SDSS J152637.36+065941.6,15 27 52.4,06 55 29,(200*3)2,21 05,1.11,J152637_V_200s*.fits,Regular,kinetic scan
-2023-04-21,shivangipandey,Gaurav,2kx2k,V,1848.8,SDSS J134332.09+253157.7,13 43 32.094 	, 25 31 57.77,300*1,17 48,1.068,J134332.09+253157.7_V_01.fits,Regular,single  scan
-2023-04-21,shivangipandey,Gaurav,2kx2k,H-alpha,1848.8,SDSS J134332.09+253157.7,13 43 32.094,25 31 57.77 	,300*1,17 55,1.11,J134332.09+253157.7_ha_01.fits,Regular,single  scan
-2023-04-21,shivangipandey,Gaurav,2kx2k,S-II,1848.8,J134332.09+253157.7,13 43 32.094,25 31 57.77 ,300*1,18 02,1.1,J134332.09+253157.7_SII_01.fit,Regular,single  scan
-2023-04-21,shivangipandey,Gaurav,2kx2k,V,1848.8,SDSS J152637.36+065941.6,15 26 37.36,06 59 41.68,300*1,18 26,1.19,J152637.36+065941.6_filter_01.,Regular,single  scan
 2023-04-21,shivangipandey,Gaurav,2kx2k,V,1848.8,SDSS J153425.59+040806.7,15 34 25.58	,04 08 06.72,300*1,19 00,1.01,J153425+040806_fiter_01.fits,Regular,single  scan
 2023-04-18,aayushiverma,"Balmukund,Gaurav",2kx2k,U,1848.8,NGC 2316,06 59 41.7,-07 46 07,"(300*5,60*3)*2",14 52,1.6,NGC 2316_UB*.fits,Regular,single  scan
 2023-04-18,aayushiverma,"Balmukund,Gaurav",2kx2k,V,1848.8, 	NGC 2316,06 59 41.7,-07 46 07,"180*5,30*3",14 32,1.6,NGC2316_V*fits,Regular,single  scan
@@ -51,7 +237,6 @@ DATE   (yyyy/mm/dd),OBSERVER,OPERATOR,INSTRUMENT,FILTER,FOCUS,OBJECT,R.A.,DEC
 2023-04-09,krishan,Gaurav,2kx2k,R,1847.9,J1507+5151,15 07 52.53,+51 51 11.10,300*10,20 58 10,1.091,J1507+5151_R_300s_1-10,Regular,kinetic scan
 2023-04-09,krishan,Gaurav,2kx2k,R,1847.9,J1507+5151,15 07 52.53,+51 51 11.10,300*10,21 47 50  ,1.112,J1507+5151_R_21-30,Regular,kinetic
 2023-04-09,krishan,Gaurav,2kx2k,R,1847.9,GRB230409B,21 58 03.54,+52 49 55.60,300*2,21 31 24,1.509,GRB230409B_R_300s_1,Regular,kinetic
-2023-04-08,krishan,"Prakash, Nikhil",2kx2k,R,1847.9,J1012+0616,10 12 46.49,+06 16 04.7,300*10,13 54 37,1.220,J1012+0616_R_1-10,Regular,kinetic scan
 2023-04-08,krishan,"Prakash, Nikhil",2kx2k,R,1847.9,J1012+0616,10 12 46.49,+06 16 04.7,300*10,15 49 22,1.088,J1012+0616_R_21-30,Regular,kinetic scan
 2023-04-08,krishan,"Prakash, Nikhil",2kx2k,R,1847.9,J1319+1056,13 19 26.53,+10 56 11.04,300*10,17 32 49,1.118,J1319+1056_R_1-10,Regular,kinetic scan
 2023-04-08,krishan,"Prakash, Nikhil",2kx2k,R,1847.9,J1507+5151,15 07 52.53,+51 51 11.1,300*10,20 45 18,1.081,J1507+5151_R_300s_1-10,Regular,kinetic scan
@@ -10489,3 +10674,40 @@ DATE   (yyyy/mm/dd),OBSERVER,OPERATOR,INSTRUMENT,FILTER,FOCUS,OBJECT,R.A.,DEC
 2013-10-13,GIREESH,KANHAIYA,2kX2k,Ic,1831.4,M31,00 43 38,+41 09 06,600,18 01 35,1.022,m31i_01,,single scan
 2013-10-13,GIREESH,KANHAIYA,2kX2k,Ic,1831.4,M31,00 43 38,+41 09 06,600,18 13 23,1.024,m31i_02,,single scan
 2013-10-13,GIREESH,KANHAIYA,2kX2k,Ic,1831.4,M31,00 43 38,+41 09 06,600,18 24 02,1.027,m31i_03,,single scan
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,Amit Ror,Balmukund,2kx2k,Hα,1847.8,14121,7,2,3,525,1,oooo,,ppp
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,dumka,Nikhil,2kx2k,"U,B",1842,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,DDT,testpavan
+0000-00-00,aomar,Balmukund,2kx2k,"U,B,V",1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,Regular,testpavan
+0000-00-00,aomar,Balmukund,2kx2k,,1846,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,testpavan,Regular,testpavan
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
+0000-00-00,,,,,,,,,,,,,,
